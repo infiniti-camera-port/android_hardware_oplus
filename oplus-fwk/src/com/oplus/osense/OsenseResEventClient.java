@@ -39,4 +39,8 @@ public class OsenseResEventClient {
     public boolean stopBackgroundRunning(Context context, int type) {
         return false;
     }
+
+    public void startBackgroundRunning(Context context, int bgMode, OsenseEventCallback callback) {
+        return;
+    }
 }
