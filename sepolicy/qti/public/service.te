@@ -2,5 +2,5 @@
 type osense_service, system_server_service, service_manager_type;
 
 # Oplus app privacy services
-type oplus_accesscontrol_service, app_api_service, service_manager_type;
-type oplus_security_permission_service, app_api_service, service_manager_type;
+type oplus_accesscontrol_service, app_api_service, system_server_service, service_manager_type;
+type oplus_security_permission_service, app_api_service, system_server_service, service_manager_type;
