@@ -5,8 +5,30 @@
 
 package com.oplus.hardware.cryptoeng;
 
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.util.Log;
+
+import vendor.oplus.hardware.cryptoeng.ICryptoeng;
+
 public class CryptoEngManager {
+    private static final String TAG = "CryptoEngManager";
+
     private static volatile CryptoEngManager sInstance = null;
+    private static String sServiceName = ICryptoeng.DESCRIPTOR + "/default";
+
+    private volatile ICryptoeng mCryptoEngService;
+
+    private IBinder.DeathRecipient mDeathRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            Log.i(TAG, sServiceName + " binderDied");
+            synchronized (CryptoEngManager.class) {
+                mCryptoEngService = null;
+            }
+        }
+    };
 
     private CryptoEngManager() {}
 
@@ -21,7 +43,36 @@ public class CryptoEngManager {
         return sInstance;
     }
 
+    private synchronized ICryptoeng getService() {
+        if (mCryptoEngService == null) {
+            IBinder binder = ServiceManager.getService(sServiceName);
+            if (binder == null) {
+                Log.w(TAG, "getService fail." + sServiceName);
+                return null;
+            }
+            try {
+                binder.linkToDeath(mDeathRecipient, 0);
+            } catch (RemoteException e) {
+                Log.e(TAG, "linkToDeath fail ", e);
+                return null;
+            }
+            mCryptoEngService = ICryptoeng.Stub.asInterface(binder);
+            if (mCryptoEngService == null) {
+                Log.e(TAG, "asInterface fail.");
+            }
+        }
+        return mCryptoEngService;
+    }
+
     public byte[] cryptoEngCommand(byte[] inData) {
+        try {
+            ICryptoeng service = getService();
+            if (service != null) {
+                return service.cryptoeng_invoke_command(inData);
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "get_project failed.", e);
+        }
         return null;
     }
 
