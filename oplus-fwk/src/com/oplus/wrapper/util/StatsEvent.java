@@ -28,6 +28,14 @@ public class StatsEvent {
             return this;
         }
 
+        public Builder writeFloat(float value) {
+            return this;
+        }
+
+        public Builder writeString(String value) {
+            return this;
+        }
+
         public Builder usePooledBuffer() {
             return this;
         }
