@@ -56,8 +56,25 @@ public class FlexibleWindowManager {
         // no-op: no embedded container tasks exist on this port.
     }
 
-    public Bundle setExtraBundle(ActivityOptions options, Bundle bundle) {
-        // No flexible-window extras to inject; hand the caller's bundle back unchanged.
-        return bundle;
+    public Bundle setExtraBundle(ActivityOptions options, Bundle exBundle) {
+        // OEM-faithful (RE'd from OOS16 oplus-framework.jar): return a proper ActivityOptions
+        // launch bundle, NOT the caller's raw flexible-extra bundle. The OEM does
+        //   if (options == null || exBundle == null) return null;
+        //   options.setExtraBundle(exBundle); return options.toBundle();
+        // where ActivityOptions.setExtraBundle(Bundle) is an OEM-only API (absent from AOSP) that
+        // embeds the flexible extras. On this port the device is never in a flexible window, so
+        // that extra is irrelevant; we mirror the OEM null-guard and hand back the standard
+        // options bundle -> a normal activity launch.
+        //
+        // The old stub returned exBundle unchanged, feeding startActivity a plain bundle carrying
+        // androidx.activity.StartFlexibleActivity / .FlexiblePosition / flexible.newtask.fullscreen
+        // keys instead of a valid ActivityOptions parcel. On true OS16 (getOplusOSVERSION() >= 29)
+        // Gallery's router takes the flexible-window branch through here, so every router:// launch
+        // (Settings, etc.) was silently dropped. Confirmed on-device: api<29 (plain path) works,
+        // api=38 (this branch) failed until this fix.
+        if (options == null || exBundle == null) {
+            return null;
+        }
+        return options.toBundle();
     }
 }
