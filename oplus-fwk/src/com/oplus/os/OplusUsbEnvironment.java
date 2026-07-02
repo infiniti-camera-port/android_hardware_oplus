@@ -18,6 +18,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Boot-classpath stub of the OEM class {@code com.oplus.os.OplusUsbEnvironment}.
+ *
+ * OEM com.oplus.os framework surface. Hard-loaded by OppoGallery2 and OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusUsbEnvironment extends Environment {
     private static final String DEFAULT_INTERNAL_PATH = "/storage/emulated/0";
     public static final int EXTERNAL = 2;

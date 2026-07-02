@@ -22,7 +22,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/**
+ * Boot-classpath stub of the OEM class {@code android.content.pm.OplusPackageManager}.
+ *
+ * OEM extension of the AOSP android.content.pm framework. Hard-loaded by OppoGallery2 and OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusPackageManager {
     public static final int FLAG_APP_DATA_CE = 2;
     public static final int FLAG_APP_DATA_DE = 1;

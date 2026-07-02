@@ -5,6 +5,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
+/**
+ * Boot-classpath stub of the OEM class {@code com.oplus.osense.eventinfo.OsenseEventResult}.
+ *
+ * OEM Osense resource-scheduling client surface. Hard-loaded by OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OsenseEventResult implements Parcelable {
     private static final String TAG = "OsenseEventResult";
 

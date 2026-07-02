@@ -10,7 +10,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/**
+ * Boot-classpath stub of the OEM binder interface {@code com.oplus.app.IOplusAccessControlManager}
+ * (the AIDL surface behind OPlusAccessControlManager: per-app access-control state set/get). Added so
+ * the OEM apks and the access-control service types link; the framework registers the Oplus
+ * access-control services against this descriptor (see the companion sepolicy). No LOS-side
+ * implementation is bound, so callers fall back to the open OPlusAccessControlManager defaults.
+ */
 public interface IOplusAccessControlManager extends IInterface {
     public static final String DESCRIPTOR = "com.oplus.app.IOplusAccessControlManager";
 

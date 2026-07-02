@@ -9,7 +9,14 @@ import com.oplus.app.IOplusProtectConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/**
+ * Boot-classpath stub of the OEM class {@code android.app.OplusWhiteListManager}.
+ *
+ * OEM extension of the AOSP android.app framework. Hard-loaded by OppoGallery2 and OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusWhiteListManager {
     private static final boolean DEBUG = false;
     private static final long MAX_PROTECT_SELF_TIMEOUT = 10800000;

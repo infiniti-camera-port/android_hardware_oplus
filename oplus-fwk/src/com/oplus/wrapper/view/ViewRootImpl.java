@@ -8,6 +8,14 @@ import android.view.SurfaceControl;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Boot-classpath stub of the OEM interface {@code com.oplus.wrapper.view.ViewRootImpl}.
+ *
+ * OEM hidden-API wrapper that re-exposes a hidden AOSP framework API to the unbundled OEM apps. Hard-loaded by OppoGallery2 and OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoSuchMethodError/NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class ViewRootImpl {
     private static final String TAG = "ViewRootImpl";
     private final Map<SurfaceChangedCallback, android.view.ViewRootImpl.SurfaceChangedCallback> mCallBackMap = new ConcurrentHashMap();

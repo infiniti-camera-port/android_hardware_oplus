@@ -6,6 +6,16 @@ import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 
+/**
+ * Boot-classpath stub of the OEM version-identity class {@code com.oplus.os.OplusBuild}.
+ *
+ * The OEM class reports the OplusOS/ColorOS release (getOplusOSVERSION(), VERSION.SDK_VERSION,
+ * RELEASE) that OEM apks branch on. Hard-loaded by OppoGallery2 and OplusCamera; absent it is a
+ * NoClassDefFoundError (an uncaught java.lang.Error) crashing those apps. The value also matters:
+ * the original stub defaulted to the old V12.1 / SDK 24 identity, keeping OS16-gated paths dormant.
+ * getOplusOSVERSION() now reads ro.build.version.oplus.api (38 on infiniti OOS16) so we report the
+ * true OS16 baseline and the OEM apks take their real OS16 code paths.
+ */
 public class OplusBuild {
     public static final int OplusOS_11_0 = 19;
     public static final int OplusOS_11_1 = 20;

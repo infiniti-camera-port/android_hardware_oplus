@@ -1,5 +1,13 @@
 package com.oplus.zoomwindow;
 
+/**
+ * Boot-classpath stub of the OEM class {@code com.oplus.zoomwindow.OplusZoomWindowManager}.
+ *
+ * OEM multi-window (zoom / flexible / mirage) feature surface. Hard-loaded by OppoGallery2 and OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusZoomWindowManager {
 
     public static OplusZoomWindowManager sOplusZoomWindowManager = null;

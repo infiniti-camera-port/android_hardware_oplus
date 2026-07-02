@@ -6,6 +6,17 @@ import android.text.TextUtils;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * Boot-classpath stub of the OEM feature oracle {@code com.oplus.content.OplusFeatureConfigManager}.
+ *
+ * The OEM class answers device/app feature queries out of oplus-framework.jar. Hard-loaded early by
+ * OplusAppPlatform (its ConfigManager$WorkHandler) as well as OppoGallery2/OplusCamera; a missing
+ * class OR a missing method is an uncaught java.lang.Error -> system_server bootloop (this exact
+ * gap, NoSuchMethodError isPermit, caused the v3.1/v3.2 bootloop once getCfgLevelList re-enabled the
+ * config worker). Resolution: isPermit() returns true (OOS-faithful — the caller processes the
+ * feature when permitted); hasFeature() returns false except the vibrator key kept for haptics.
+ * Media/livephoto/DV keys ride the AppFeatureProvider XML scan, not this class.
+ */
 public class OplusFeatureConfigManager {
 
     public static OplusFeatureConfigManager sOplusFeatureConfigManager = null;

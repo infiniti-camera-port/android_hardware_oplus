@@ -2,6 +2,13 @@ package com.oplus.app;
 
 import android.os.UserHandle;
 
+/**
+ * Boot-classpath stub of the OEM {@code com.oplus.app.OPlusAccessControlManager} (app access-control:
+ * app-lock / hidden apps / private encryption). Hard-loaded by OppoGallery2/OplusCamera; absent it is
+ * a NoClassDefFoundError. With no OEM access-control service on this port, isEncryptPass() returns
+ * true (treat every app as already unlocked/passed) so gated UI stays reachable, and the remaining
+ * queries return open/empty defaults.
+ */
 public class OPlusAccessControlManager {
     private static volatile OPlusAccessControlManager sInstance = null;
     public static final int USER_CURRENT = UserHandle.myUserId();
