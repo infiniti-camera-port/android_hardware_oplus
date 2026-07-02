@@ -7,6 +7,14 @@ import android.graphics.Region;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 
+/**
+ * Boot-classpath stub of the OEM interface {@code com.oplus.flexiblewindow.FlexibleTaskView}.
+ *
+ * OEM multi-window (zoom / flexible / mirage) feature surface. Hard-loaded by OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoSuchMethodError/NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class FlexibleTaskView extends SurfaceView {
 
     public FlexibleTaskView(Context context) {

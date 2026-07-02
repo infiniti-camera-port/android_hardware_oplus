@@ -4,7 +4,14 @@ import android.hardware.HardwareBuffer;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* loaded from: classes.dex */
+/**
+ * Boot-classpath stub of the OEM class {@code com.oplus.app.OplusScreenShotResult}.
+ *
+ * OEM app-management framework surface. Hard-loaded by OppoGallery2 (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusScreenShotResult implements Parcelable {
     public static final Parcelable.Creator<OplusScreenShotResult> CREATOR = new Parcelable.Creator<OplusScreenShotResult>() { // from class: com.oplus.app.OplusScreenShotResult.1
         @Override // android.os.Parcelable.Creator

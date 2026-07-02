@@ -5,6 +5,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /* Faithful port of OEM com.oplus.miragewindow.OplusCastScreenState (Parcelable data class). */
+/**
+ * Boot-classpath stub of the OEM class {@code com.oplus.miragewindow.OplusCastScreenState}.
+ *
+ * OEM multi-window (zoom / flexible / mirage) feature surface. Hard-loaded by OppoGallery2 (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing the app on launch / disabling the feature. Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusCastScreenState implements Parcelable {
     public static final int INITIALIZING = 1;
     public static final int RUNNING = 2;

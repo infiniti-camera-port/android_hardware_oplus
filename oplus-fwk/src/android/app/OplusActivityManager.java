@@ -10,7 +10,14 @@ import android.os.RemoteException;
 import com.oplus.app.OplusAppInfo;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/**
+ * Boot-classpath stub of the OEM class {@code android.app.OplusActivityManager}.
+ *
+ * OEM extension of the AOSP android.app framework. Hard-loaded by OplusAppPlatform, OppoGallery2 and OplusCamera (type / const-class reference); absent from our
+ * LOS oplus-fwk it raises NoClassDefFoundError — an uncaught java.lang.Error — crashing OplusAppPlatform's boot-time provider (system_server bootloop). Stubbed to close the
+ * linkage; members return safe defaults (false / 0 / null / empty / no-op) as only the type
+ * surface is consumed here.
+ */
 public class OplusActivityManager extends OplusBaseActivityManager implements IOplusActivityManager, IOplusActivityTaskManager {
     private static final String TAG = "OplusActivityManager";
     private final OplusActivityTaskManager mOplusAtm = OplusActivityTaskManager.getInstance();
