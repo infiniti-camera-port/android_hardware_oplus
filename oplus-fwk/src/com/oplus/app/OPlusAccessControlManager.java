@@ -32,10 +32,6 @@ public class OPlusAccessControlManager {
         return new java.util.HashMap();
     }
 
-    // OEM no-ops (logs "Service is null") when the AccessControl service is absent (our LOS case).
-    public void setAccessControlAppsInfo(String type, java.util.Map appsInfo, int userId) {
-    }
-
     public boolean getAccessControlEnabled(String pkg, int userId) {
         return false;
     }

@@ -31,14 +31,4 @@ public class OplusMultiAppManager extends BaseOplusMultiAppManager {
     public List getMultiAppList(int userId) {
         return new ArrayList();
     }
-
-    // OEM returns false when the multi-user service is absent (our LOS case).
-    public boolean isMultiAppSupport() {
-        return false;
-    }
-
-    // OEM returns Collections.emptyList() when the multi-user service is absent.
-    public List getMultiAppUserInfoList() {
-        return java.util.Collections.emptyList();
-    }
 }
