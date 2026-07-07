@@ -18,7 +18,7 @@ import android.view.View;
  * exact descriptor [[Lcom/oplus/widget/OplusItem;. At runtime setAppInfo is a
  * no-op that never touches the array elements, so OplusItem is never loaded from
  * the boot classpath; the gallery-side invoke resolves OplusItem against the
- * gallery`s own classloader. See /tmp/closure-stubs/oplus-fwk-compileonly/.
+ * gallery`s own classloader. Keep any compile-only companions repo-local.
  */
 public class OplusGridView extends View {
 
